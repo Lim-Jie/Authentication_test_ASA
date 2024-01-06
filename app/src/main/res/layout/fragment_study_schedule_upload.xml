@@ -1,256 +1,367 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".studyScheduleUploadFragment">
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:gravity="bottom">
 
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/createSessionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Create Study Session"
+        android:textSize="25dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:drawableStart="@drawable/round_keyboard_arrow_left_24"
+        android:clickable="true"/>
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_marginTop="24dp"
-           android:fontFamily="@font/poppins_semibold"
-           android:gravity="center"
-           android:text="Schedule a study Session"
-           android:textSize="24dp"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintHorizontal_bias="0.277"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="580dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/shadow"
+        android:elevation="8dp">
 
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="580dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            tools:ignore="MissingConstraints">
 
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toTopOf="parent"
-          android:layout_marginTop="80dp"
-          android:background="@drawable/rounded_corner_rectangles">
-
-
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="16dp"
-              android:layout_marginTop="32dp"
-              android:fontFamily="@font/roboto_light"
-              android:gravity="center"
-              android:text="Choose your subject"
-              android:textSize="28dp"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toTopOf="parent" />
-
-          <EditText
-              android:id="@+id/editTextSubject"
-              android:layout_width="318dp"
-              android:layout_height="63dp"
-              android:layout_marginStart="36dp"
-              android:layout_marginTop="100dp"
-              android:background="@drawable/updateshedulerectanglebox"
-              android:fontFamily="@font/poppins_semibold"
-              android:hint="Subject : "
-              android:inputType="text"
-              android:paddingStart="30dp"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toTopOf="parent" />
-
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_marginStart="24dp"
-              android:layout_marginTop="196dp"
-              android:fontFamily="@font/roboto_light"
-              android:gravity="center"
-              android:text="Study Brief Description"
-              android:textSize="28dp"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toTopOf="parent" />
-
-          <EditText
-              android:id="@+id/editTextStudyDescription"
-              android:layout_width="321dp"
-              android:layout_height="163dp"
-              android:layout_marginStart="32dp"
-              android:layout_marginTop="256dp"
-              android:paddingBottom="90dp"
-              android:paddingStart="15dp"
-              android:background="@drawable/userresgistrationbox"
-              android:fontFamily="@font/poppins_semibold"
-              android:hint="Study Description :  "
-              android:inputType="text"
-              app:layout_constraintStart_toStartOf="parent"
-              app:layout_constraintTop_toTopOf="parent" />
-
-          <LinearLayout
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              app:layout_constraintTop_toTopOf="parent"
-              app:layout_constraintStart_toStartOf="parent"
-              android:orientation="vertical"
-              android:layout_marginTop="440dp"
-              android:paddingBottom="150dp">
-
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:gravity="center"
-                  android:text="Choose your date"
-                  android:textSize="28dp"
-                  android:fontFamily="@font/roboto_light"
-                  android:layout_marginLeft="25dp"/>
-
-              <CalendarView
-                  android:id="@+id/calendarView"
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  app:layout_constraintTop_toTopOf="parent"
-                  app:layout_constraintStart_toStartOf="parent"/>
-
-              <Button
-                  android:id="@+id/DateStudySchedule"
-                  style="@style/Widget.Material3.Button.ElevatedButton"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginLeft="28dp"
-                  android:text="Select Date"
-                  app:layout_constraintBottom_toBottomOf="parent"
-                  app:layout_constraintEnd_toEndOf="parent"
-                  app:layout_constraintTop_toTopOf="parent" />
-
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="24dp"
-                  android:fontFamily="@font/roboto_light"
-                  android:text="Select a Time"
-                  android:textSize="24dp"
-                  android:layout_marginLeft="25dp"
-                  app:layout_constraintEnd_toEndOf="parent"
-                  app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintTop_toTopOf="parent" />
-
-              <TimePicker
-                  android:paddingTop="20dp"
-                  android:id="@+id/timePicker"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
 
-              <TextView
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="24dp"
-                  android:fontFamily="@font/roboto_light"
-                  android:text="Select a Venue"
-                  android:textSize="24dp"
-                  android:layout_marginLeft="25dp"
-                  app:layout_constraintEnd_toEndOf="parent"
-                  app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/subjectNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="16dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Topics/Subject"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints" />
 
-              <EditText
-                  android:id="@+id/editTextVenue"
-                  android:layout_width="321dp"
-                  android:layout_height="163dp"
-                  android:layout_marginLeft="25dp"
-                  android:layout_marginTop="10dp"
-                  android:background="@drawable/userresgistrationbox"
-                  android:fontFamily="@font/poppins_semibold"
-                  android:hint="Location :  "
-                  android:inputType="text"
-                  android:paddingStart="30dp"
-                  android:paddingBottom="90dp" />
+                <EditText
+                    android:id="@+id/editTextSubject"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingLeft="20dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:hint="Add topics"
+                    android:inputType="text"
+                    android:textColorHint="@color/grey_color"
+                    android:paddingStart="15dp"
+                    android:background="@drawable/shadow_box2"
 
-              <RadioGroup
-                  android:id="@+id/RadioGroupStudySchedule"
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="30dp"
-                  android:layout_marginStart="25dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subjectNameText"/>
 
->
-                  <TextView
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="Study mode: "
-                      android:fontFamily="@font/roboto_light"/>
-                  <RadioButton
-                      android:id="@+id/radioButtonPhysical"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="Physical"
-                      android:fontFamily="@font/roboto_light"/>
+                <TextView
+                    android:id="@+id/sessionDetailsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Details"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/editTextSubject"
+                    />
 
-                  <RadioButton
-                      android:id="@+id/radioButtonOnline"
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="Online"
-                      android:fontFamily="@font/roboto_light"/>
+                <EditText
+                    android:id="@+id/editTextVenue"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:hint="Add location"
+                    android:inputType="text"
+                    android:paddingStart="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sessionDetailsText"
+                    android:drawableStart="@drawable/round_pin_drop_24"
+                    android:drawablePadding="10dp"
+                    android:background="@drawable/shadow_box2"
+                    android:drawableTint="@color/grey_color"/>
 
-              </RadioGroup>
+                <EditText
+                    android:id="@+id/editTextStudyDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fontFamily="@font/robotoregular"
+                    android:hint="Add description"
+                    android:inputType="text"
+                    android:paddingStart="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextVenue"
+                    android:drawableStart="@drawable/round_edit_note_24"
+                    android:drawablePadding="10dp"
+                    android:background="@drawable/shadow_box2"
+                    android:drawableTint="@color/grey_color"
+                    android:gravity="start|top"/>
 
-              <Button
-                  android:id="@+id/SubmitSchedule"
-                  style="@style/Widget.Material3.Button.ElevatedButton"
-                  android:layout_width="350dp"
-                  android:layout_height="wrap_content"
-                  android:layout_marginLeft="28dp"
-                  android:textColor="@color/white"
-                  android:backgroundTint="#20AEFF"
-                  android:layout_marginTop="25dp"
-                  android:text="Broadcast Schedule"/>
+                <TextView
+                    android:id="@+id/chooseDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="16dp"
+                    android:textSize="18dp"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Please choose the date"
+                    app:layout_constraintTop_toBottomOf="@id/editTextStudyDescription"
+                    android:background="@drawable/shadow_box2"
+                    android:drawableStart="@drawable/round_date_range_24"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@color/grey_color"
+                    />
 
-              <TextView
-                  android:id="@+id/ButtonWarning"
-                  android:layout_width="wrap_content"
-                  android:layout_marginLeft="25dp"
-                  android:layout_marginTop="15dp"
-                  android:layout_height="wrap_content"
-                  android:text=""
-                  android:fontFamily="@font/robotoregular"
-                  android:textSize="20dp"
-                  android:textColor="#ff0000"
-              />
+                <CalendarView
+                    android:id="@+id/calendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:clickable="true"
+                    app:layout_constraintTop_toBottomOf="@id/chooseDate"/>
+
+                <!--<Button
+                    android:id="@+id/DateStudySchedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/shadow"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Select Date"
+                    app:layout_constraintTop_toBottomOf="@id/calendarView" />-->
+
+                <TextView
+                    android:id="@+id/chooseTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="16dp"
+                    android:textSize="18dp"
+                    android:gravity="center_vertical"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Please choose the time"
+                    app:layout_constraintTop_toBottomOf="@id/calendarView"
+                    android:background="@drawable/shadow_box2"
+                    android:drawableStart="@drawable/round_access_time_24"
+                    android:drawablePadding="10dp"
+                    android:drawableTint="@color/grey_color"
+                    />
+
+                <TimePicker
+                    android:id="@+id/timePicker"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"/>
+
+                <!--<Button
+                    android:id="@+id/TimeStudySchedule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/shadow"
+                    android:fontFamily="@font/robotoregular"
+                    android:text="Select Time"
+                    app:layout_constraintTop_toBottomOf="@id/timePicker" />-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:ignore="MissingConstraints"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toBottomOf="@id/calendarView">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Study Mode"
+                        android:textSize="16dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/RadioGroupStudySchedule"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="horizontal"
+                        app:layout_constraintTop_toBottomOf="@id/chooseDate">
+
+
+                        <RadioButton
+                            android:id="@+id/radioButtonPhysical"
+                            android:layout_width="100dp"
+                            android:paddingTop="4dp"
+                            android:gravity="center|top"
+                            android:layout_height="35dp"
+                            android:layout_marginRight="10dp"
+                            android:fontFamily="@font/robotoregular"
+                            android:text="Physical"
+                            android:textSize="18dp"
+                            android:button="@null"
+                            android:textColor="@drawable/radio_text_color"
+                            android:background="@drawable/bg_radio_button"/>
+
+
+                        <RadioButton
+                            android:id="@+id/radioButtonOnline"
+                            android:layout_width="100dp"
+                            android:paddingTop="4dp"
+                            android:gravity="center|top"
+                            android:layout_height="35dp"
+                            android:fontFamily="@font/robotoregular"
+                            android:text="Virtual"
+                            android:textSize="18dp"
+                            android:button="@null"
+                            android:textColor="@drawable/radio_text_color"
+                            android:background="@drawable/bg_radio_button"/>
+
+
+                    </RadioGroup>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
 
 
 
 
 
-          </LinearLayout>
 
 
 
-      </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--<Button
+            android:id="@+id/DateStudySchedule"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:text="Select Date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="Select a Time"
+            android:textSize="24dp"
+            android:layout_marginLeft="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TimePicker
+            android:paddingTop="20dp"
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="Select a Venue"
+            android:textSize="24dp"
+            android:layout_marginLeft="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextVenue"
+            android:layout_width="321dp"
+            android:layout_height="163dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/userresgistrationbox"
+            android:fontFamily="@font/poppins_semibold"
+            android:hint="Location :  "
+            android:inputType="text"
+            android:paddingStart="30dp"
+            android:paddingBottom="90dp" />-->
 
 
 
+        <!-- STUDY MODE BUTTON -->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/SubmitSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Create Study Session"
+        app:layout_constraintTop_toBottomOf="@id/radioButtonPhysical"
+        />
 
 
 
-
-
-
-   </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</ScrollView>
+</LinearLayout>
